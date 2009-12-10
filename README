@@ -1,0 +1,60 @@
+Django Natural Earth
+=======================
+
+For now this is only an importer for the 
+Natural Earth data (http://www.naturalearthdata.com)
+It only imports the Country and County data at 
+the moment, since I was primarily checking out if 
+the data is accurate enough. 
+
+However, the vision would be to make an app that loads 
+useful geodata from natural earth and geonames and
+throws it into a geodjango index which can be used 
+for making more complex geoqueries.
+
+If you are interested in this and want to help me maintain
+ a project then write me a mail at:
+phil [at] maptales [dot] com
+
+Warning: At the moment the County import throws an error.
+The people at Natural Earth know this already
+and will fix this soon.
+
+
+I also looked at: http://github.com/philippWassibauer/geonames, 
+which is a bit out of sync with geonames at the moment, but could be
+easily integrated into this app and 
+has data that Natural Earth does not have, 
+eg.: elevation data in a 50m2 precision (if I remember correctly)
+
+
+----------------------
+Dependencies:
+----------------------
+Geodjango
+
+
+------------------------
+Usage:
+------------------------
+* Install the App
+* Start a Geodjango Project. Don't forget to add 'django.contrib.gis' to
+  the installed apps and refer to the Geodjango website for the DB setup etc.
+* run python manage.py ne_import_countries.py
+* run python manage.py ne_import_counties.py
+* go to your admin and look at the imported data
+
+
+------------------------
+Todo:
+------------------------
+* Finishing the rest of the commands, there is much more data to be importet
+* Writing queries for the Data, eg.: in what county/country am I? How many of my 
+  geotagged items are in this county/country? Am I in an urban area? etc etc.
+* Testing the queries
+
+
+
+
+
+
