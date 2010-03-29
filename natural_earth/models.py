@@ -1,6 +1,7 @@
 from django.contrib.gis.db import models
 
 class Country(models.Model):
+    slug = models.CharField(max_length=150)
     name = models.CharField(max_length=150)
     featurecla = models.CharField(max_length=32)
     soviso = models.CharField(max_length=100)
@@ -61,6 +62,12 @@ class Country(models.Model):
     # Returns the string representation of the model.
     def __unicode__(self):
         return self.name
+    
+    def save(self, *args, **kwargs):
+        from django.template.defaultfilters import slugify
+        self.slug = slugify(self.name)
+        super(self.__class__, self).save(*args, **kwargs) # Call the "real" save() method.
+        
     
     
     
