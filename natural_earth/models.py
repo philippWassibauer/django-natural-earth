@@ -3,9 +3,52 @@ from django.contrib.gis.db import models
 class Country(models.Model):
     name = models.CharField(max_length=150)
     featurecla = models.CharField(max_length=32)
-    sov = models.CharField(max_length=100)
-    shape_leng = models.FloatField()
-    shape_area = models.FloatField()
+    soviso = models.CharField(max_length=100)
+    scalerank = models.IntegerField()
+    sovereignt = models.CharField(max_length=200)
+    sov_a3 = models.CharField(max_length=200)
+    level = models.FloatField()
+    type = models.CharField(max_length=200)
+    sortname = models.CharField(max_length=200)
+    adm0_a3 = models.CharField(max_length=200)
+    name_sm = models.CharField(max_length=200)
+    name_lng = models.CharField(max_length=200)
+    terr = models.CharField(max_length=200)
+    parentheti = models.CharField(max_length=200)
+    name_alt = models.CharField(max_length=200)
+    local_lng = models.CharField(max_length=200)
+    local_sm = models.CharField(max_length=200)
+    former = models.CharField(max_length=200)
+    abbrev = models.CharField(max_length=200)
+    fips_10 = models.CharField(max_length=200)
+    iso_a2 = models.CharField(max_length=200)
+    iso_a3 = models.CharField(max_length=200)
+    iso_n3 = models.FloatField()
+    map_color = models.FloatField()
+    people = models.FloatField()
+    gdp_usdm = models.FloatField()
+    itu = models.CharField(max_length=200)
+    ioc = models.CharField(max_length=200)
+    fifa = models.CharField(max_length=200)
+    ds = models.CharField(max_length=200)
+    wmo = models.CharField(max_length=200)
+    
+    gaul = models.FloatField()
+    marc = models.CharField(max_length=200)
+    stanag1059 = models.CharField(max_length=200)
+    gw_id = models.FloatField()
+    dial = models.FloatField()
+    internet = models.CharField(max_length=3)
+    cog = models.CharField(max_length=5)
+    actual = models.CharField(max_length=1)
+    capay = models.CharField(max_length=5)
+    crpay = models.CharField(max_length=5)
+    ani = models.CharField(max_length=4)
+    libenr = models.CharField(max_length=50)
+    ancnom = models.CharField(max_length=20)
+    pays_r_gio = models.CharField(max_length=50)
+    comment = models.CharField(max_length=260)
+    
     
     # Multipolygon since Polygon fields in Shapefiles can be Multipolygons
     mpoly = models.MultiPolygonField()
@@ -18,6 +61,16 @@ class Country(models.Model):
     # Returns the string representation of the model.
     def __unicode__(self):
         return self.name
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
 class County(models.Model):
